@@ -1,0 +1,22 @@
+{
+  "name": "mnt-ephemeral-template-cache-ea-9cf8ef252cdac5889073396b013ab13c08e0f2d643636e68857b81e25f5d47-out",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/mdx": "^3.0.1",
+    "@astrojs/rss": "^4.0.6",
+    "@astrojs/sitemap": "^3.1.5",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.9.3",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5"
+  }
+}
