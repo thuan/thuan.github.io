@@ -1,50 +1,58 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_TAGLINE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import Ava from '@src/assets/img/index.gif';
+import Prose from '../components/Prose.astro';
+import { projects } from './projects/projects';
+import ProjectList from '../components/ProjectList.astro'
+import PostItem from '../components/PostItem.astro';
+
+type BlogPost = CollectionEntry<'blog'>;
+
+const top6Projects = projects.slice(0, 3);
+const posts = (await getCollection('blog')).sort((a: BlogPost, b: BlogPost) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 5);
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
+<BaseLayout title={SITE_TITLE + ' - ' + SITE_TAGLINE} description={SITE_DESCRIPTION}>
+	<div class='container'>
+		<div class='w-full md:flex md:items-center gap-16 mb-10'>
+      <div class="text-pretty leading-9">
+        <h1 class="text-4xl font-bold mb-4">Hi There 👋, Thuan Here! </h1>
+        <Prose>
+          <div class="text-lg">
+            <p>I am a Back-end Engineer from Indonesia. I love sharing what i know on <a href="https://devaradise.com" target="_blank">devaradise.com</a>, and sometime i also share freebies like this. I'm also active on <a href="https://dev.to/syakirurahman" target="_blank">dev.to</a> and <a href="https://x.com/syakirurahman" target="_blank">twitter</a>.</p>
+            <p>I made Devolio to help you easily set up your own blog and portfolio website. It's a static site built with Astro and Tailwind CSS, and you can deploy it on platforms like <a href="https://app.netlify.com/start/deploy?repository=https://github.com/devaradise/devolio" target="_blank" rel="nofollow noopener">Netlify</a>, <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdevaradise%2Fdevolio" target="_blank" rel="nofollow noopener">Vercel</a>, or <a href="https://pages.cloudflare.com/" target="_blank" rel="nofollow noopener">Cloudflare Pages</a>.</p>  
+          </div>
+        </Prose>
+      </div>
+      <Image src={Ava} alt="Muhammad Syakirurohman" width={300} loading="eager" class="rounded-3xl rotate-3 mx-4 md:mx-0"/>
+		</div>
 		<main>
-			<h1>🧑‍🚀 Hey Boy</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+      <div class='mt-6 mb-12'>
+        <div class="flex justify-between gap-2 border-b mb-1 dark:border-b-zinc-700">
+          <h2 class="text-lg font-bold mb-3">Recent Posts</h2>
+          <a href="/posts/" class="inline-block py-2 underline text-zinc-950">All posts &raquo;</a>
+        </div>
+        <div>
+          {
+            posts.map((post: BlogPost) => (
+              <PostItem post={post} />
+            ))
+          }      
+        </div>
+        <div class="text-right">
+        </div>
+      </div>
+      <div>
+        <div class="flex justify-between gap-2 mb-1">
+          <h2 class="text-lg font-bold mb-3">My Projects</h2>
+          <a href="/projects/" class="inline-block py-2 underline text-zinc-950">All projects &raquo;</a>
+        </div>
+        <ProjectList projects={top6Projects}/>
+      </div>
 		</main>
-		<Footer />
-	</body>
-</html>
+	</div>
+</BaseLayout>
