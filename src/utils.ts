@@ -27,14 +27,42 @@ export const kFormatter = (num: number) => {
 	return Math.abs(num) > 999 ? (Math.sign(num) * (Math.abs(num) / 1000)).toFixed(1) + 'k' : Math.sign(num) * Math.abs(num);
 };
 
+const getGitHubToken = () => {
+	const token = GITHUB_PERSONAL_ACCESS_TOKEN || process.env.GITHUB_PERSONAL_ACCESS_TOKEN;
+	return token?.trim() ? token.trim() : undefined;
+};
+
 export const getRepositoryDetails = async (repositoryFullname: string) => {
+	if (!repositoryFullname) {
+		return { message: 'Repository name is required.', repositoryFullname, success: false };
+	}
+
+	const token = getGitHubToken();
+	if (!token) {
+		return {
+			message: 'GitHub personal access token is not configured for this build.',
+			repositoryFullname,
+			success: false,
+		};
+	}
+
 	const repoDetails = await fetch('https://api.github.com/repos/' + repositoryFullname, {
 		method: 'GET',
 		headers: {
-			Authorization: `Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}`,
+			Accept: 'application/vnd.github+json',
+			Authorization: `Bearer ${token}`,
 			'X-GitHub-Api-Version': '2022-11-28'
 		}
 	});
+
+	if (!repoDetails.ok) {
+		return {
+			message: `GitHub API request failed with status ${repoDetails.status}`,
+			repositoryFullname,
+			success: false,
+		};
+	}
+
 	const response = await repoDetails.json();
-	return response;
+	return { ...response, success: true };
 };
