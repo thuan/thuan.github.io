@@ -7,25 +7,41 @@ const locale = 'en';
 const projects = [
   {
     title: 'Software Architecture',
-    description: 'Scalable and maintainable solutions built with performance and clarity in mind.',
+    description:
+      'Projects focused on scalability, structure and real-world performance, with attention to maintenance and long-term growth.',
     stack: ['Node.js', 'TypeScript', 'Architecture', 'API'],
     href: '#',
   },
   {
     title: 'Digital Products',
-    description: 'Modern experiences designed around usability, fast delivery and strategic value.',
+    description:
+      'Modern digital experiences focused on usability, clarity and real value for users and businesses.',
     stack: ['Astro', 'React', 'UX', 'Performance'],
     href: '#',
   },
   {
     title: 'Automation & Integrations',
-    description: 'Connection between systems, workflows and services to reduce manual work and boost efficiency.',
+    description:
+      'Solutions that connect systems and reduce manual work, increasing efficiency and predictability in operations.',
     stack: ['Integrations', 'SQL', 'Automation', 'Backend'],
     href: '#',
   },
 ];
 
-const stack = ['TypeScript', 'Node.js', 'Astro', 'React', 'SQL', 'APIs', 'GitHub', 'Software Architecture', 'Product Thinking', 'UX', 'Cloud', 'Automation'];
+const stack = [
+  'TypeScript',
+  'Node.js',
+  'Astro',
+  'React',
+  'SQL',
+  'APIs',
+  'GitHub',
+  'Software Architecture',
+  'Product Thinking',
+  'UX',
+  'Cloud',
+  'Automation',
+];
 ---
 
 <BaseLayout title={SITE_TITLE + ' - ' + SITE_TAGLINE} description={SITE_DESCRIPTION} lang={locale}>
@@ -40,7 +56,7 @@ const stack = ['TypeScript', 'Node.js', 'Astro', 'React', 'SQL', 'APIs', 'GitHub
     </p>
   </section>
 
-  <section class="py-6 md:py-12">
+  <section id="about" class="py-6 md:py-12">
     <div class="mx-auto max-w-5xl rounded-[32px] border border-[#1d2330]/10 bg-white/70 p-8 shadow-[0_25px_70px_rgba(17,24,39,0.06)] md:p-12">
       <div class="flex items-center gap-3">
         <span class="inline-block h-3 w-3 rounded-full bg-[#1d2330]"></span>
@@ -48,16 +64,16 @@ const stack = ['TypeScript', 'Node.js', 'Astro', 'React', 'SQL', 'APIs', 'GitHub
       </div>
 
       <h2 class="mt-5 max-w-3xl text-3xl font-black leading-tight text-[#1d2330] md:text-5xl">
-        Creative developer focused on product, backend and applied technology.
+        Creative developer focused on backend, product and applied technology.
       </h2>
 
       <div class="mt-7 grid gap-8 md:grid-cols-2">
         <div class="space-y-4 text-lg leading-8 text-[#374151]">
           <p>
-            I’m Thuan, a developer focused on backend systems, software architecture and digital experiences that combine functionality, speed and clarity.
+            I’m Thuan Saraiva, a developer focused on backend, software architecture and digital experiences that unite functionality, clarity and performance.
           </p>
           <p>
-            I work on projects that require both technical vision and product sensibility, building solutions that are more consistent, useful and scalable.
+            I work at the intersection of technology and product, building scalable, useful and well-crafted solutions for people and businesses.
           </p>
         </div>
 

@@ -6,26 +6,42 @@ const locale = 'es';
 
 const projects = [
   {
-    title: 'Arquitectura de software',
-    description: 'Soluciones escalables y mantenibles con foco en rendimiento y claridad.',
+    title: 'Arquitectura de Sistemas',
+    description:
+      'Proyectos enfocados en escalabilidad, estructura y rendimiento real, con atención a la mantenibilidad y al crecimiento del producto.',
     stack: ['Node.js', 'TypeScript', 'Arquitectura', 'API'],
     href: '#',
   },
   {
-    title: 'Productos digitales',
-    description: 'Experiencias modernas centradas en usabilidad, entrega rápida y valor estratégico.',
+    title: 'Productos Digitales',
+    description:
+      'Experiencias digitales modernas enfocadas en usabilidad, claridad y valor real para usuarios y negocios.',
     stack: ['Astro', 'React', 'UX', 'Performance'],
     href: '#',
   },
   {
-    title: 'Automatización e integraciones',
-    description: 'Conexión entre sistemas, flujos de trabajo y servicios para reducir esfuerzo manual y aumentar eficiencia.',
+    title: 'Automatización & Integraciones',
+    description:
+      'Soluciones que conectan sistemas y reducen el trabajo manual, aumentando la eficiencia y previsibilidad operativa.',
     stack: ['Integrations', 'SQL', 'Automatización', 'Backend'],
     href: '#',
   },
 ];
 
-const stack = ['TypeScript', 'Node.js', 'Astro', 'React', 'SQL', 'APIs', 'GitHub', 'Arquitectura de software', 'Product Thinking', 'UX', 'Cloud', 'Automatización'];
+const stack = [
+  'TypeScript',
+  'Node.js',
+  'Astro',
+  'React',
+  'SQL',
+  'APIs',
+  'GitHub',
+  'Arquitectura de Software',
+  'Product Thinking',
+  'UX',
+  'Cloud',
+  'Automatización',
+];
 ---
 
 <BaseLayout title={SITE_TITLE + ' - ' + SITE_TAGLINE} description={SITE_DESCRIPTION} lang={locale}>
@@ -40,7 +56,7 @@ const stack = ['TypeScript', 'Node.js', 'Astro', 'React', 'SQL', 'APIs', 'GitHub
     </p>
   </section>
 
-  <section class="py-6 md:py-12">
+  <section id="about" class="py-6 md:py-12">
     <div class="mx-auto max-w-5xl rounded-[32px] border border-[#1d2330]/10 bg-white/70 p-8 shadow-[0_25px_70px_rgba(17,24,39,0.06)] md:p-12">
       <div class="flex items-center gap-3">
         <span class="inline-block h-3 w-3 rounded-full bg-[#1d2330]"></span>
@@ -48,16 +64,16 @@ const stack = ['TypeScript', 'Node.js', 'Astro', 'React', 'SQL', 'APIs', 'GitHub
       </div>
 
       <h2 class="mt-5 max-w-3xl text-3xl font-black leading-tight text-[#1d2330] md:text-5xl">
-        Desarrollador creativo con enfoque en producto, backend y tecnología aplicada.
+        Desarrollador creativo con enfoque en backend, producto y tecnología aplicada.
       </h2>
 
       <div class="mt-7 grid gap-8 md:grid-cols-2">
         <div class="space-y-4 text-lg leading-8 text-[#374151]">
           <p>
-            Soy Thuan, desarrollador enfocado en backend, arquitectura de software y experiencias digitales que combinan funcionalidad, velocidad y claridad.
+            Soy Thuan Saraiva, desarrollador enfocado en backend, arquitectura de software y experiencias digitales que combinan funcionalidad, claridad y rendimiento.
           </p>
           <p>
-            Trabajo en proyectos que requieren visión técnica y sensibilidad de producto, construyendo soluciones más consistentes, útiles y escalables.
+            Trabajo en la intersección entre tecnología y producto, creando soluciones escalables, útiles y bien pensadas para personas y negocios.
           </p>
         </div>
 
