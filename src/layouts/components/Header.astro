@@ -7,10 +7,16 @@ const links = [
   { href: '#contact', label: 'Contact' },
 ];
 
-const localeMap = {
-  en: 'EN',
-  es: 'ES',
-  'pt-BR': 'PT-BR',
+const toHref = (href: string) => {
+  if (href === '/') {
+    return lang === 'en' ? '/' : `/${lang}/`;
+  }
+
+  if (href.startsWith('#')) {
+    return lang === 'en' ? `/${href}` : `/${lang}/${href}`;
+  }
+
+  return lang === 'en' ? href : `/${lang}${href}`;
 };
 ---
 
@@ -28,7 +34,7 @@ const localeMap = {
 
     <div class="hidden items-center gap-7 text-sm text-stone-700 md:flex">
       {links.map((link) => (
-        <a href={lang === 'en' ? link.href : `/${lang}${link.href === '/' ? '' : link.href}` } class="text-xs font-medium uppercase tracking-[0.22em] hover:text-stone-900">
+        <a href={toHref(link.href)} class="text-xs font-medium uppercase tracking-[0.22em] hover:text-stone-900">
           {link.label}
         </a>
       ))}
