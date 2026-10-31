@@ -1,29 +1,26 @@
 ---
-const { lang = 'pt' } = Astro.props;
+const { lang = 'en' } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-[#1f2430]/10 bg-[#f5f3ef]">
-  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-[#4b5565] sm:px-6 lg:flex-row lg:px-8">
+<footer class="border-t border-stone-200 bg-[#f4f0ea]">
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 px-4 py-8 text-sm text-stone-600 sm:px-6 lg:flex-row lg:px-8">
     <div>
-      <p class="font-semibold tracking-[0.18em] text-[#1d2330]">
-        <span class="font-black">THUAN</span>
-        <span class="font-normal"> SARAIVA</span>
-      </p>
-      <p class="mt-1 text-xs uppercase tracking-[0.22em] text-[#687385]">Creative | Technology</p>
+      <p class="text-[10px] font-semibold uppercase tracking-[0.28em] text-stone-500">Thuan Nabuco</p>
+      <p class="mt-2 text-xs uppercase tracking-[0.24em] text-stone-700">Software Engineer</p>
     </div>
 
-    <div class="flex items-center gap-5">
-      <a href="https://github.com/thuan" target="_blank" rel="noreferrer" class="transition hover:text-[#111827]">GitHub</a>
-      <a href="mailto:thuansaraiva@proton.me" class="transition hover:text-[#111827]">Email</a>
-      <a href="https://linktr.ee/thuan" target="_blank" rel="noreferrer" class="transition hover:text-[#111827]">Linktree</a>
+    <div class="flex items-center gap-5 text-xs font-medium uppercase tracking-[0.18em]">
+      <a href="https://github.com/thuan" target="_blank" rel="noreferrer" class="hover:text-stone-900">GitHub</a>
+      <a href="mailto:thuansaraiva@proton.me" class="hover:text-stone-900">Email</a>
+      <a href="https://linktr.ee/thuan" target="_blank" rel="noreferrer" class="hover:text-stone-900">Linktree</a>
     </div>
   </div>
 
-  <div class="border-t border-[#1f2430]/10 py-4">
-    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 text-xs uppercase tracking-[0.18em] text-[#687385] sm:px-6 lg:flex-row lg:px-8">
-      <span>© {currentYear} Thuan Saraiva</span>
-      <span>{lang === 'pt' ? 'Todos os direitos reservados' : lang === 'en' ? 'All rights reserved' : 'Todos los derechos reservados'}</span>
+  <div class="border-t border-stone-200 py-4">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 text-[10px] uppercase tracking-[0.2em] text-stone-500 sm:px-6 lg:px-8">
+      <span>© {currentYear} Thuan Nabuco</span>
+      <span>{lang === 'en' ? 'All rights reserved' : lang === 'es' ? 'Todos los derechos reservados' : 'Todos os direitos reservados'}</span>
     </div>
   </div>
 </footer>

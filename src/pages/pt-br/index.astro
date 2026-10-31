@@ -1,0 +1,137 @@
+---
+import { SITE_TITLE, SITE_TAGLINE, SITE_DESCRIPTION } from '../../consts';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    title: 'Arquitetura de plataformas',
+    description:
+      'Projetando serviços resilientes, limites claros e fluxos sustentáveis para equipes de produto em crescimento.',
+    stack: ['TypeScript', 'Node.js', 'Mensageria', 'APIs'],
+  },
+  {
+    title: 'Sistemas de produto',
+    description:
+      'Entregando ferramentas que conectam lógica de negócio, experiência do usuário e clareza operacional em um único fluxo.',
+    stack: ['Produto', 'UX', 'Automação', 'Observabilidade'],
+  },
+  {
+    title: 'Experiências digitais',
+    description:
+      'Criando interfaces refinadas e fundações técnicas que fazem os produtos parecerem claros, rápidos e confiáveis.',
+    stack: ['Astro', 'React', 'Design Systems', 'Performance'],
+  },
+];
+
+const services = [
+  'Design de sistemas',
+  'Engenharia backend',
+  'Design de APIs',
+  'Estratégia de produto',
+  'Automação',
+  'Performance',
+  'Revisão de arquitetura',
+  'Execução digital',
+];
+---
+
+<BaseLayout title={SITE_TITLE + ' - ' + SITE_TAGLINE} description={SITE_DESCRIPTION} lang="pt-BR">
+  <section class="grid gap-10 pb-10 pt-8 md:grid-cols-[1.35fr_0.65fr] md:items-end md:pt-14">
+    <div>
+      <p class="mb-4 text-[10px] font-semibold uppercase tracking-[0.32em] text-stone-500">
+        Engenheiro de software • builder • pensador de sistemas
+      </p>
+      <h1 class="max-w-3xl text-4xl font-black uppercase tracking-[-0.06em] text-stone-900 md:text-7xl">
+        Eu construo software que parece limpo, rápido e digno de confiança.
+      </h1>
+      <p class="mt-6 max-w-xl text-base leading-7 text-stone-600 md:text-lg">
+        Sou Thuan Nabuco, engenheiro de software focado em sistemas backend, pensamento de produto e experiências digitais que unem profundidade técnica com usabilidade real.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="mailto:thuansaraiva@proton.me" class="rounded-full border border-stone-900 bg-stone-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-stone-700">
+          Contato
+        </a>
+        <a href="https://linktr.ee/thuan" target="_blank" rel="noreferrer" class="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-medium text-stone-800 transition hover:border-stone-400">
+          Conectar
+        </a>
+      </div>
+    </div>
+
+    <div class="rounded-[28px] border border-stone-200 bg-white p-5 shadow-[0_18px_50px_rgba(28,25,23,0.04)]">
+      <div class="flex items-center justify-between border-b border-stone-200 pb-3">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.28em] text-stone-500">Perfil</span>
+        <span class="text-xs font-medium text-stone-500">Disponível</span>
+      </div>
+      <div class="mt-5 space-y-5 text-sm text-stone-600">
+        <div>
+          <p class="text-[10px] uppercase tracking-[0.28em] text-stone-500">Base</p>
+          <p class="mt-2 font-medium text-stone-800">Remoto • Global</p>
+        </div>
+        <div>
+          <p class="text-[10px] uppercase tracking-[0.28em] text-stone-500">Foco</p>
+          <p class="mt-2 font-medium text-stone-800">Backend, sistemas de produto e execução digital</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-8 md:py-12">
+    <div class="mb-6 flex items-center justify-between gap-4 border-b border-stone-200 pb-3">
+      <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-stone-500">O que faço</p>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-4">
+      {services.map((service) => (
+        <div class="rounded-[22px] border border-stone-200 bg-white p-5 shadow-[0_12px_24px_rgba(28,25,23,0.03)]">
+          <p class="text-sm font-medium uppercase tracking-[0.2em] text-stone-700">{service}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-8 md:py-12">
+    <div class="mb-6 flex items-center justify-between gap-4 border-b border-stone-200 pb-3">
+      <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-stone-500">Trabalho selecionado</p>
+      <a href="/projects/" class="text-xs font-medium uppercase tracking-[0.22em] text-stone-700 hover:text-stone-900">
+        Ver tudo
+      </a>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      {projects.map((project) => (
+        <article class="rounded-[28px] border border-stone-200 bg-[#faf8f5] p-6 shadow-[0_18px_40px_rgba(28,25,23,0.03)]">
+          <div class="mb-5 h-36 rounded-[22px] border border-stone-200 bg-[radial-gradient(circle_at_top_left,_rgba(41,37,36,0.08),_rgba(255,255,255,0.2)_40%,_rgba(41,37,36,0.02)_100%)]" />
+          <h2 class="text-2xl font-semibold tracking-[-0.05em] text-stone-900">{project.title}</h2>
+          <p class="mt-3 text-sm leading-7 text-stone-600">{project.description}</p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            {project.stack.map((tag) => (
+              <span class="rounded-full border border-stone-200 bg-white px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-stone-600">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-8 md:py-12">
+    <div class="rounded-[30px] border border-stone-200 bg-stone-900 p-8 text-stone-50 shadow-[0_22px_55px_rgba(28,25,23,0.14)] md:p-10">
+      <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-stone-300">Vamos construir</p>
+      <h2 class="mt-4 max-w-2xl text-3xl font-black tracking-[-0.05em] md:text-5xl">
+        Ajudo equipes a transformar complexidade em produtos que as pessoas confiam.
+      </h2>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="mailto:thuansaraiva@proton.me" class="rounded-full bg-white px-5 py-3 text-sm font-medium text-stone-900 transition hover:bg-stone-200">
+          thuansaraiva@proton.me
+        </a>
+        <a href="https://github.com/thuan" target="_blank" rel="noreferrer" class="rounded-full border border-stone-700 px-5 py-3 text-sm font-medium text-stone-100 transition hover:border-stone-500 hover:bg-stone-800">
+          GitHub
+        </a>
+        <a href="https://linktr.ee/thuan" target="_blank" rel="noreferrer" class="rounded-full border border-stone-700 px-5 py-3 text-sm font-medium text-stone-100 transition hover:border-stone-500 hover:bg-stone-800">
+          Linktree
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

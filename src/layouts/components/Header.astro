@@ -1,34 +1,45 @@
 ---
-const { lang = 'pt' } = Astro.props;
+const { lang = 'en' } = Astro.props;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Work' },
+  { href: '#contact', label: 'Contact' },
+];
+
+const localeMap = {
+  en: 'EN',
+  es: 'ES',
+  'pt-BR': 'PT-BR',
+};
 ---
 
-<header class="sticky top-0 z-40 border-b border-[#1f2430]/10 bg-[#f5f3ef]/90 backdrop-blur-md">
-  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-    <a href={lang === 'pt' ? '/' : `/${lang}/`} class="flex items-center gap-3">
-      <img
-        src="/logo-thuan.svg"
-        alt="Logo Thuan Saraiva"
-        class="h-11 w-11 rounded-xl object-cover ring-1 ring-[#1f2430]/20 shadow-sm shadow-[#1f2430]/10"
-      />
+<header class="sticky top-0 z-40 border-b border-stone-200/80 bg-[#f4f0ea]/80 backdrop-blur-md">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <a href={lang === 'en' ? '/' : `/${lang}/`} class="flex items-center gap-3">
+      <div class="flex h-9 w-9 items-center justify-center border border-stone-300 bg-white text-sm font-black tracking-[0.2em] text-stone-900">
+        T
+      </div>
       <div class="leading-none">
-        <div class="text-base font-black tracking-[0.12em] text-[#1d2330]">THUAN</div>
-        <div class="mt-1 text-[9px] font-medium uppercase tracking-[0.34em] text-[#4a5565]">Saraiva</div>
+        <div class="text-[10px] font-semibold uppercase tracking-[0.26em] text-stone-500">Thuan</div>
+        <div class="mt-1 text-base font-black uppercase tracking-[0.16em] text-stone-900">Nabuco</div>
       </div>
     </a>
 
-    <div class="hidden items-center gap-7 text-sm font-medium text-[#2d3748] md:flex">
-      <a href={lang === 'pt' ? '/' : `/${lang}/`} class="transition hover:text-[#111827]">Início</a>
-      <a href={lang === 'pt' ? '#about' : `/${lang}/#about`} class="transition hover:text-[#111827]">Sobre</a>
-      <a href={lang === 'pt' ? '#projects' : `/${lang}/#projects`} class="transition hover:text-[#111827]">Projetos</a>
-      <a href={lang === 'pt' ? '#contact' : `/${lang}/#contact`} class="transition hover:text-[#111827]">Contato</a>
+    <div class="hidden items-center gap-7 text-sm text-stone-700 md:flex">
+      {links.map((link) => (
+        <a href={lang === 'en' ? link.href : `/${lang}${link.href === '/' ? '' : link.href}` } class="text-xs font-medium uppercase tracking-[0.22em] hover:text-stone-900">
+          {link.label}
+        </a>
+      ))}
     </div>
 
-    <div class="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em]">
-      <a href="/" class={lang === 'pt' ? 'text-[#1d2330]' : 'text-[#58657a]'}>PT</a>
-      <span class="text-[#8a90a1]">|</span>
-      <a href="/en/" class={lang === 'en' ? 'text-[#1d2330]' : 'text-[#58657a]'}>EN</a>
-      <span class="text-[#8a90a1]">|</span>
-      <a href="/es/" class={lang === 'es' ? 'text-[#1d2330]' : 'text-[#58657a]'}>ES</a>
+    <div class="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-600">
+      <a href="/" class={lang === 'en' ? 'text-stone-900' : ''}>EN</a>
+      <span class="text-stone-400">/</span>
+      <a href="/es/" class={lang === 'es' ? 'text-stone-900' : ''}>ES</a>
+      <span class="text-stone-400">/</span>
+      <a href="/pt-br/" class={lang === 'pt-BR' ? 'text-stone-900' : ''}>PT-BR</a>
     </div>
   </nav>
 </header>

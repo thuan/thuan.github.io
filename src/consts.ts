@@ -1,4 +1,4 @@
-export const SITE_TITLE = 'Thuan Saraiva';
-export const SITE_TAGLINE = 'Creative | Technology';
+export const SITE_TITLE = 'Thuan Nabuco';
+export const SITE_TAGLINE = 'Software Engineer • Product & Systems';
 export const SITE_DESCRIPTION =
-  'Portfolio profissional de Thuan Saraiva, desenvolvedor criativo e tecnológico.';
+  'Portfolio of Thuan Nabuco — software engineer focused on product, systems, and digital experiences.';
