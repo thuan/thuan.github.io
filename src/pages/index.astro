@@ -7,50 +7,35 @@ const locale = 'pt';
 const projects = [
   {
     title: 'Arquitetura de Sistemas',
-    description:
-      'Design de soluções escaláveis, com foco em clareza, manutenção e desempenho para produtos digitais reais.',
+    description: 'Design de soluções escaláveis, com foco em clareza, manutenção e desempenho para produtos digitais reais.',
     stack: ['Node.js', 'TypeScript', 'Arquitetura', 'API'],
     href: '#',
   },
   {
     title: 'Produtos Digitais',
-    description:
-      'Criação de experiências digitais modernas com foco em UX, performance e entrega de valor para usuários e negócios.',
+    description: 'Criação de experiências digitais modernas com foco em UX, performance e entrega de valor para usuários e negócios.',
     stack: ['Astro', 'React', 'UI/UX', 'Performance'],
     href: '#',
   },
   {
     title: 'Automação & Integrações',
-    description:
-      'Conexões entre sistemas, workflows e serviços para reduzir esforço manual e aumentar eficiência operacional.',
+    description: 'Conexões entre sistemas, workflows e serviços para reduzir esforço manual e aumentar eficiência operacional.',
     stack: ['Integrations', 'SQL', 'Automação', 'Backend'],
     href: '#',
   },
 ];
 
-const stack = [
-  'TypeScript',
-  'Node.js',
-  'Astro',
-  'React',
-  'SQL',
-  'APIs',
-  'GitHub',
-  'Arquitetura de Software',
-  'Product Thinking',
-  'UX',
-  'Cloud',
-  'Automação',
-];
+const stack = ['TypeScript', 'Node.js', 'Astro', 'React', 'SQL', 'APIs', 'GitHub', 'Arquitetura de Software', 'Product Thinking', 'UX', 'Cloud', 'Automação'];
 ---
 
 <BaseLayout title={SITE_TITLE + ' - ' + SITE_TAGLINE} description={SITE_DESCRIPTION} lang={locale}>
   <section class="flex flex-col items-center px-2 py-10 text-center md:py-16">
     <img src="/logo-thuan.svg" alt="Logo Thuan Saraiva" class="h-52 w-52 md:h-72 md:w-72" />
-    <h1 class="mt-8 text-4xl font-black uppercase tracking-[0.14em] text-[#1d2330] md:text-7xl">
-      THUAN SARAIVA
+    <h1 class="mt-8 text-4xl font-black uppercase tracking-[0.12em] text-[#1d2330] md:text-7xl">
+      <span class="font-black">THUAN</span>
+      <span class="font-normal"> SARAIVA</span>
     </h1>
-    <p class="mt-4 text-[10px] font-semibold uppercase tracking-[0.42em] text-[#4d596f] md:text-sm">
+    <p class="mt-4 text-[10px] font-semibold uppercase tracking-[0.38em] text-[#4d596f] md:text-sm">
       CREATIVE | TECHNOLOGY
     </p>
   </section>
@@ -151,14 +136,14 @@ const stack = [
       </p>
 
       <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a href="mailto:contato@thuan.dev" class="rounded-full bg-white px-6 py-3 font-semibold text-[#1d2330] transition hover:bg-slate-200">
-          contato@thuan.dev
+        <a href="mailto:thuansaraiva@proton.me" class="rounded-full bg-white px-6 py-3 font-semibold text-[#1d2330] transition hover:bg-slate-200">
+          thuansaraiva@proton.me
         </a>
         <a href="https://github.com/thuan" target="_blank" rel="noreferrer" class="rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/5">
           GitHub
         </a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" class="rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/5">
-          LinkedIn
+        <a href="https://linktr.ee/thuan" target="_blank" rel="noreferrer" class="rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/5">
+          Linktree
         </a>
       </div>
     </div>

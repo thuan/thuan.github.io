@@ -18,5 +18,9 @@
     <path d="M200 230V510" fill="none"/>
     <path d="M600 230V510" fill="none"/>
     <path d="M300 350H500" fill="none"/>
+    <path d="M280 330H290L400 240L510 330H520V420H280V330Z" fill="none"/>
+    <path d="M315 330V430H485V330" fill="none"/>
+    <path d="M400 240V430" fill="none"/>
+    <path d="M310 430H490" fill="none"/>
   </g>
 </svg>
