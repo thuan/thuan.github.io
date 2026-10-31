@@ -2,23 +2,33 @@
 const { lang = 'pt' } = Astro.props;
 ---
 
-<header class="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+<header class="sticky top-0 z-40 border-b border-[#1f2430]/10 bg-[#f5f3ef]/90 backdrop-blur-md">
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-    <a href={lang === 'pt' ? '/' : `/${lang}/`} class="text-lg font-black tracking-wide text-white">
-      Thuan
+    <a href={lang === 'pt' ? '/' : `/${lang}/`} class="flex items-center gap-3">
+      <img
+        src="/logo-thuan.svg"
+        alt="Logo Thuan Saraiva"
+        class="h-12 w-12 rounded-xl object-cover ring-1 ring-[#1f2430]/20 shadow-sm shadow-[#1f2430]/10"
+      />
+      <div class="leading-none">
+        <div class="text-lg font-black tracking-[0.12em] text-[#1d2330]">THUAN</div>
+        <div class="mt-1 text-[9px] font-medium uppercase tracking-[0.34em] text-[#4a5565]">SARAIVA</div>
+      </div>
     </a>
 
-    <div class="hidden items-center gap-6 text-sm text-slate-300 md:flex">
-      <a href={lang === 'pt' ? '/' : `/${lang}/`} class="transition hover:text-white">Início</a>
-      <a href={lang === 'pt' ? '#about' : `/${lang}/#about`} class="transition hover:text-white">Sobre</a>
-      <a href={lang === 'pt' ? '#projects' : `/${lang}/#projects`} class="transition hover:text-white">Projetos</a>
-      <a href={lang === 'pt' ? '#contact' : `/${lang}/#contact`} class="transition hover:text-white">Contato</a>
+    <div class="hidden items-center gap-7 text-sm font-medium text-[#2d3748] md:flex">
+      <a href={lang === 'pt' ? '/' : `/${lang}/`} class="transition hover:text-[#111827]">Início</a>
+      <a href={lang === 'pt' ? '#about' : `/${lang}/#about`} class="transition hover:text-[#111827]">Sobre</a>
+      <a href={lang === 'pt' ? '#projects' : `/${lang}/#projects`} class="transition hover:text-[#111827]">Projetos</a>
+      <a href={lang === 'pt' ? '#contact' : `/${lang}/#contact`} class="transition hover:text-[#111827]">Contato</a>
     </div>
 
-    <div class="flex items-center gap-2 text-xs font-medium">
-      <a href="/" class={lang === 'pt' ? 'text-cyan-400' : 'text-slate-400'}>PT</a>
-      <a href="/en/" class={lang === 'en' ? 'text-cyan-400' : 'text-slate-400'}>EN</a>
-      <a href="/es/" class={lang === 'es' ? 'text-cyan-400' : 'text-slate-400'}>ES</a>
+    <div class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em]">
+      <a href="/" class={lang === 'pt' ? 'text-[#1d2330]' : 'text-[#58657a]'}>PT</a>
+      <span class="text-[#8a90a1]">|</span>
+      <a href="/en/" class={lang === 'en' ? 'text-[#1d2330]' : 'text-[#58657a]'}>EN</a>
+      <span class="text-[#8a90a1]">|</span>
+      <a href="/es/" class={lang === 'es' ? 'text-[#1d2330]' : 'text-[#58657a]'}>ES</a>
     </div>
   </nav>
 </header>

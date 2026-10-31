@@ -1,75 +1,82 @@
 ---
 import { SITE_TITLE, SITE_TAGLINE, SITE_DESCRIPTION } from '../../consts';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { translations } from '../../i18n/strings';
 
 const locale = 'en';
-const t = translations[locale];
 
 const projects = [
   {
-    title: 'Personal portfolio',
-    description: 'Modern website to present projects, articles and contact links.',
+    title: 'Software Architecture',
+    description: 'Scalable and maintainable solutions built with performance and clarity in mind.',
     href: '#',
+    stack: ['Node', 'TypeScript', 'Architecture'],
   },
   {
-    title: 'Management API',
-    description: 'Scalable backend with auth, business rules, and integrations.',
+    title: 'Digital Products',
+    description: 'Modern experiences designed around usability, fast delivery and strategic value.',
     href: '#',
+    stack: ['Astro', 'React', 'UX'],
   },
   {
-    title: 'Analytics dashboard',
-    description: 'Performance-focused insights panel with clean readability.',
+    title: 'Systems & Integrations',
+    description: 'Automation, robust backend logic and efficient service integration.',
     href: '#',
+    stack: ['API', 'SQL', 'Integration'],
   },
 ];
 ---
 
 <BaseLayout title={SITE_TITLE + ' - ' + SITE_TAGLINE} description={SITE_DESCRIPTION} lang={locale}>
-  <section class="grid items-center gap-10 py-10 md:grid-cols-[1.3fr_0.7fr] md:py-20">
-    <div>
-      <p class="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-cyan-400">
-        {t.hero.greeting}
-      </p>
-      <h1 class="max-w-xl text-4xl font-black leading-tight text-white md:text-6xl">
-        {t.hero.title}
-      </h1>
-      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-        {t.hero.subtitle}
-      </p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="#projects" class="rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950">
-          {t.hero.ctaPrimary}
-        </a>
-        <a href="#contact" class="rounded-full border border-slate-700 px-6 py-3 font-semibold text-white">
-          {t.hero.ctaSecondary}
-        </a>
+  <section class="flex flex-col items-center px-2 py-10 text-center md:py-16">
+    <img src="/logo-thuan.svg" alt="Logo Thuan Saraiva" class="h-52 w-52 md:h-72 md:w-72" />
+    <h1 class="mt-8 text-4xl font-black uppercase tracking-[0.12em] text-[#1d2330] md:text-7xl">
+      THUAN SARAIVA
+    </h1>
+    <p class="mt-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#4d596f] md:text-sm">
+      CREATIVE | TECHNOLOGY
+    </p>
+  </section>
+
+  <section class="py-6 md:py-10">
+    <div class="mx-auto max-w-4xl rounded-[32px] border border-[#1d2330]/10 bg-white/70 p-8 shadow-[0_22px_60px_rgba(17,24,39,0.05)]">
+      <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[#64748b]">About</p>
+      <h2 class="mt-4 text-3xl font-black text-[#1d2330]">Creative developer focused on product and technology.</h2>
+      <div class="mt-6 space-y-4 text-lg leading-8 text-[#374151]">
+        <p>
+          I’m Thuan, a developer focused on backend systems, software architecture and digital experiences that combine functionality, speed and clarity.
+        </p>
+        <p>
+          I build technology with strategy in mind, creating products that are scalable, useful and consistent for people and businesses.
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="about" class="py-12">
-    <div class="mb-6 flex items-center justify-between border-b border-slate-800 pb-4">
-      <h2 class="text-2xl font-bold text-white">{t.about.title}</h2>
+  <section id="projects" class="py-8 md:py-12">
+    <div class="mb-8 flex items-end justify-between gap-4 border-b border-[#1d2330]/10 pb-4">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[#64748b]">Projects</p>
+        <h2 class="mt-2 text-3xl font-black text-[#1d2330]">Selected work</h2>
+      </div>
+      <a href="/projects/" class="text-sm font-semibold uppercase tracking-[0.22em] text-[#1d2330] hover:text-[#475569]">
+        See all
+      </a>
     </div>
-    <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 text-lg leading-8 text-slate-300">
-      <p>{t.about.text}</p>
-    </div>
-  </section>
 
-  <section id="projects" class="py-12">
-    <div class="mb-6 flex items-center justify-between border-b border-slate-800 pb-4">
-      <h2 class="text-2xl font-bold text-white">{t.projects.title}</h2>
-      <a href="/projects/" class="text-sm text-cyan-400 hover:text-cyan-300">{t.projects.cta}</a>
-    </div>
     <div class="grid gap-6 md:grid-cols-3">
       {
         projects.map((project) => (
-          <article class="rounded-2xl border border-slate-800 bg-slate-900/40 p-5 transition hover:-translate-y-1 hover:border-cyan-500/50">
-            <div class="mb-4 h-36 rounded-xl bg-gradient-to-br from-cyan-500/20 to-slate-800" />
-            <h3 class="text-xl font-bold text-white">{project.title}</h3>
-            <p class="mt-3 text-slate-300">{project.description}</p>
-            <a href={project.href} class="mt-5 inline-block text-cyan-400">Read more →</a>
+          <article class="rounded-[28px] border border-[#1d2330]/10 bg-white/80 p-6 shadow-[0_20px_50px_rgba(17,24,39,0.04)]">
+            <div class="mb-5 h-32 rounded-2xl bg-gradient-to-br from-[#e2e8f0] via-[#f8fafc] to-[#dbeafe]" />
+            <h3 class="text-2xl font-black text-[#1d2330]">{project.title}</h3>
+            <p class="mt-3 text-base leading-7 text-[#475569]">{project.description}</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              {project.stack.map((tag) => (
+                <span class="rounded-full border border-[#1d2330]/10 bg-[#f8fafc] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#475569]">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </article>
         ))
       }

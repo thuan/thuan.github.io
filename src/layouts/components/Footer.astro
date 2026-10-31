@@ -3,12 +3,24 @@ const { lang = 'pt' } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-slate-800 bg-slate-950">
-  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-slate-400 sm:px-6 lg:flex-row lg:px-8">
-    <p>© {currentYear} Thuan. {lang === 'pt' ? 'Todos os direitos reservados.' : lang === 'en' ? 'All rights reserved.' : 'Todos los derechos reservados.'}</p>
-    <div class="flex gap-4">
-      <a href="https://github.com/thuan" target="_blank" rel="noreferrer" class="transition hover:text-white">GitHub</a>
-      <a href="mailto:contato@thuan.dev" class="transition hover:text-white">Email</a>
+<footer class="border-t border-[#1f2430]/10 bg-[#f5f3ef]">
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-[#4b5565] sm:px-6 lg:flex-row lg:px-8">
+    <div>
+      <p class="font-semibold tracking-[0.18em] text-[#1d2330]">THUAN SARAIVA</p>
+      <p class="mt-1 text-xs uppercase tracking-[0.22em] text-[#687385]">Creative | Technology</p>
+    </div>
+
+    <div class="flex items-center gap-5">
+      <a href="https://github.com/thuan" target="_blank" rel="noreferrer" class="transition hover:text-[#111827]">GitHub</a>
+      <a href="mailto:contato@thuan.dev" class="transition hover:text-[#111827]">Email</a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" class="transition hover:text-[#111827]">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="border-t border-[#1f2430]/10 py-4">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 text-xs uppercase tracking-[0.18em] text-[#687385] sm:px-6 lg:flex-row lg:px-8">
+      <span>© {currentYear} Thuan Saraiva</span>
+      <span>{lang === 'pt' ? 'Todos os direitos reservados' : lang === 'en' ? 'All rights reserved' : 'Todos los derechos reservados'}</span>
     </div>
   </div>
 </footer>
