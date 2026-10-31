@@ -7,47 +7,71 @@ const locale = 'es';
 const projects = [
   {
     title: 'Arquitectura de software',
-    description: 'Soluciones escalables y mantenibles con foco en rendimiento y claridad.',
+    description:
+      'Soluciones escalables y mantenibles con foco en rendimiento y claridad.',
+    stack: ['Node.js', 'TypeScript', 'Arquitectura', 'API'],
     href: '#',
-    stack: ['Node', 'TypeScript', 'Arquitectura'],
   },
   {
     title: 'Productos digitales',
-    description: 'Experiencias modernas centradas en usabilidad, entrega rápida y valor estratégico.',
+    description:
+      'Experiencias modernas centradas en usabilidad, entrega rápida y valor estratégico.',
+    stack: ['Astro', 'React', 'UX', 'Performance'],
     href: '#',
-    stack: ['Astro', 'React', 'UX'],
   },
   {
-    title: 'Sistemas e integraciones',
-    description: 'Automatización, lógica backend sólida y conexión eficiente entre servicios.',
+    title: 'Automatización e integraciones',
+    description:
+      'Conexión entre sistemas, flujos de trabajo y servicios para reducir esfuerzo manual y aumentar eficiencia.',
+    stack: ['Integrations', 'SQL', 'Automatización', 'Backend'],
     href: '#',
-    stack: ['API', 'SQL', 'Integración'],
   },
 ];
+
+const stack = ['TypeScript', 'Node.js', 'Astro', 'React', 'SQL', 'APIs', 'GitHub', 'Arquitectura de software', 'Product Thinking', 'UX', 'Cloud', 'Automatización'];
 ---
 
 <BaseLayout title={SITE_TITLE + ' - ' + SITE_TAGLINE} description={SITE_DESCRIPTION} lang={locale}>
   <section class="flex flex-col items-center px-2 py-10 text-center md:py-16">
     <img src="/logo-thuan.svg" alt="Logo Thuan Saraiva" class="h-52 w-52 md:h-72 md:w-72" />
-    <h1 class="mt-8 text-4xl font-black uppercase tracking-[0.12em] text-[#1d2330] md:text-7xl">
+    <h1 class="mt-8 text-4xl font-black uppercase tracking-[0.14em] text-[#1d2330] md:text-7xl">
       THUAN SARAIVA
     </h1>
-    <p class="mt-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#4d596f] md:text-sm">
+    <p class="mt-4 text-[10px] font-semibold uppercase tracking-[0.42em] text-[#4d596f] md:text-sm">
       CREATIVE | TECHNOLOGY
     </p>
   </section>
 
-  <section class="py-6 md:py-10">
-    <div class="mx-auto max-w-4xl rounded-[32px] border border-[#1d2330]/10 bg-white/70 p-8 shadow-[0_22px_60px_rgba(17,24,39,0.05)]">
-      <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[#64748b]">Sobre mí</p>
-      <h2 class="mt-4 text-3xl font-black text-[#1d2330]">Desarrollador creativo con enfoque en producto y tecnología.</h2>
-      <div class="mt-6 space-y-4 text-lg leading-8 text-[#374151]">
-        <p>
-          Soy Thuan, desarrollador enfocado en backend, arquitectura de software y experiencias digitales que combinan funcionalidad, velocidad y claridad.
-        </p>
-        <p>
-          Construyo tecnología con estrategia, creando productos escalables, útiles y consistentes para personas y negocios.
-        </p>
+  <section class="py-6 md:py-12">
+    <div class="mx-auto max-w-5xl rounded-[32px] border border-[#1d2330]/10 bg-white/70 p-8 shadow-[0_25px_70px_rgba(17,24,39,0.06)] md:p-12">
+      <div class="flex items-center gap-3">
+        <span class="inline-block h-3 w-3 rounded-full bg-[#1d2330]"></span>
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-[#64748b]">Sobre mí</p>
+      </div>
+
+      <h2 class="mt-5 max-w-3xl text-3xl font-black leading-tight text-[#1d2330] md:text-5xl">
+        Desarrollador creativo con enfoque en producto, backend y tecnología aplicada.
+      </h2>
+
+      <div class="mt-7 grid gap-8 md:grid-cols-2">
+        <div class="space-y-4 text-lg leading-8 text-[#374151]">
+          <p>
+            Soy Thuan, desarrollador enfocado en backend, arquitectura de software y experiencias digitales que combinan funcionalidad, velocidad y claridad.
+          </p>
+          <p>
+            Trabajo en proyectos que requieren visión técnica y sensibilidad de producto, construyendo soluciones más consistentes, útiles y escalables.
+          </p>
+        </div>
+
+        <div class="rounded-[28px] border border-[#1d2330]/10 bg-[#f5f3ef] p-5">
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-[#64748b]">Especialidad</p>
+          <ul class="mt-4 space-y-3 text-base text-[#1d2330]">
+            <li>• Backend & APIs</li>
+            <li>• Arquitectura de software</li>
+            <li>• Soluciones digitales escalables</li>
+            <li>• UX y producto digital</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -55,10 +79,10 @@ const projects = [
   <section id="projects" class="py-8 md:py-12">
     <div class="mb-8 flex items-end justify-between gap-4 border-b border-[#1d2330]/10 pb-4">
       <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[#64748b]">Proyectos</p>
-        <h2 class="mt-2 text-3xl font-black text-[#1d2330]">Trabajos seleccionados</h2>
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-[#64748b]">Proyectos</p>
+        <h2 class="mt-2 text-3xl font-black text-[#1d2330] md:text-4xl">Trabajos seleccionados</h2>
       </div>
-      <a href="/projects/" class="text-sm font-semibold uppercase tracking-[0.22em] text-[#1d2330] hover:text-[#475569]">
+      <a href="/projects/" class="text-xs font-semibold uppercase tracking-[0.22em] text-[#1d2330] hover:text-[#475569]">
         Ver todos
       </a>
     </div>
@@ -66,8 +90,8 @@ const projects = [
     <div class="grid gap-6 md:grid-cols-3">
       {
         projects.map((project) => (
-          <article class="rounded-[28px] border border-[#1d2330]/10 bg-white/80 p-6 shadow-[0_20px_50px_rgba(17,24,39,0.04)]">
-            <div class="mb-5 h-32 rounded-2xl bg-gradient-to-br from-[#e2e8f0] via-[#f8fafc] to-[#dbeafe]" />
+          <article class="rounded-[28px] border border-[#1d2330]/10 bg-white/80 p-6 shadow-[0_20px_50px_rgba(17,24,39,0.04)] transition hover:-translate-y-1">
+            <div class="mb-5 h-32 rounded-2xl bg-gradient-to-br from-[#dfe7ef] via-[#f8fafc] to-[#dbeafe]" />
             <h3 class="text-2xl font-black text-[#1d2330]">{project.title}</h3>
             <p class="mt-3 text-base leading-7 text-[#475569]">{project.description}</p>
             <div class="mt-5 flex flex-wrap gap-2">
@@ -77,9 +101,27 @@ const projects = [
                 </span>
               ))}
             </div>
+            <a href={project.href} class="mt-6 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-[#1d2330] hover:text-[#475569]">
+              Saber más →
+            </a>
           </article>
         ))
       }
+    </div>
+  </section>
+
+  <section class="py-8 md:py-12">
+    <div class="mb-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-[#64748b]">Stack</p>
+      <h2 class="mt-2 text-3xl font-black text-[#1d2330] md:text-4xl">Herramientas y áreas de trabajo</h2>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      {stack.map((item) => (
+        <span class="rounded-full border border-[#1d2330]/10 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#475569]">
+          {item}
+        </span>
+      ))}
     </div>
   </section>
 </BaseLayout>

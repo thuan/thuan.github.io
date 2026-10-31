@@ -8,10 +8,10 @@ const { lang = 'pt' } = Astro.props;
       <img
         src="/logo-thuan.svg"
         alt="Logo Thuan Saraiva"
-        class="h-12 w-12 rounded-xl object-cover ring-1 ring-[#1f2430]/20 shadow-sm shadow-[#1f2430]/10"
+        class="h-11 w-11 rounded-xl object-cover ring-1 ring-[#1f2430]/20 shadow-sm shadow-[#1f2430]/10"
       />
       <div class="leading-none">
-        <div class="text-lg font-black tracking-[0.12em] text-[#1d2330]">THUAN</div>
+        <div class="text-base font-black tracking-[0.12em] text-[#1d2330]">THUAN</div>
         <div class="mt-1 text-[9px] font-medium uppercase tracking-[0.34em] text-[#4a5565]">SARAIVA</div>
       </div>
     </a>
@@ -23,7 +23,7 @@ const { lang = 'pt' } = Astro.props;
       <a href={lang === 'pt' ? '#contact' : `/${lang}/#contact`} class="transition hover:text-[#111827]">Contato</a>
     </div>
 
-    <div class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em]">
+    <div class="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em]">
       <a href="/" class={lang === 'pt' ? 'text-[#1d2330]' : 'text-[#58657a]'}>PT</a>
       <span class="text-[#8a90a1]">|</span>
       <a href="/en/" class={lang === 'en' ? 'text-[#1d2330]' : 'text-[#58657a]'}>EN</a>
