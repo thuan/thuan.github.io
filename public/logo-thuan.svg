@@ -1,26 +1,17 @@
 <svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="800" fill="#F5F3EF"/>
-  <g stroke="#2A2F39" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M200 230L400 80L600 230V510L400 660L200 510V230Z" fill="none"/>
-    <path d="M200 230L400 420L600 230" fill="none"/>
-    <path d="M240 230H560" fill="none"/>
-    <path d="M200 510L400 330L600 510" fill="none"/>
-    <path d="M400 80V660" fill="none"/>
-    <path d="M240 230V510" fill="none"/>
-    <path d="M560 230V510" fill="none"/>
-    <path d="M275 230L400 155L525 230" fill="none"/>
-    <path d="M330 240H470V420H330V240Z" fill="none"/>
-    <path d="M330 240L400 330L470 240" fill="none"/>
-    <path d="M360 240V420" fill="none"/>
-    <path d="M440 240V420" fill="none"/>
-    <path d="M240 510H560" fill="none"/>
-    <path d="M150 530H650" fill="none"/>
-    <path d="M200 230V510" fill="none"/>
-    <path d="M600 230V510" fill="none"/>
-    <path d="M300 350H500" fill="none"/>
-    <path d="M280 330H290L400 240L510 330H520V420H280V330Z" fill="none"/>
-    <path d="M315 330V430H485V330" fill="none"/>
-    <path d="M400 240V430" fill="none"/>
-    <path d="M310 430H490" fill="none"/>
+  <rect width="800" height="800" fill="none"/>
+  <g fill="#0F172A">
+    <path d="M137 165H298V232H222V572H298V639H137V165Z"/>
+    <path d="M502 165H663V232H587V572H663V639H502V165Z"/>
+    <path d="M324 165H475L306 392H155L324 165Z"/>
+    <path d="M476 165H617L448 392H306L476 165Z"/>
+    <path d="M286 392H514L394 572H155L286 392Z"/>
+    <path d="M514 392H646L477 572H394L514 392Z"/>
+    <path d="M360 165H440V639H360V165Z"/>
+  </g>
+  <g fill="#F8FAFC">
+    <path d="M560 239H650V296H560V239Z"/>
+    <path d="M150 239H240V296H150V239Z"/>
+    <path d="M360 239H440V296H360V239Z"/>
   </g>
 </svg>
