@@ -2,18 +2,20 @@
 const { lang = 'en' } = Astro.props;
 const links = [
   { href: '/', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Work' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Work' },
+  { href: '/posts', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
 ];
 
+const isLocaleRoute = (href: string) => href.startsWith('/');
 const toHref = (href: string) => {
   if (href === '/') {
     return lang === 'en' ? '/' : `/${lang}/`;
   }
 
-  if (href.startsWith('#')) {
-    return lang === 'en' ? `/${href}` : `/${lang}/${href}`;
+  if (!isLocaleRoute(href)) {
+    return href;
   }
 
   return lang === 'en' ? href : `/${lang}${href}`;
